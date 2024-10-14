@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { version } from '@sonolus/core'
+import { version as engineVersion } from 'sonolus-d4dj-engine'
 import { ref } from 'vue'
 import { version as appVersion } from '../package.json'
 import VLink from './components/VLink.vue'
@@ -16,6 +17,8 @@ const rating = ref(0)
 const cover = ref<File>()
 const bgm = ref<File>()
 const preview = ref<File>()
+const chart = ref<File>()
+const offset = ref(0)
 const description = ref('')
 
 const state = ref<{ type: 'packing' } | { type: 'success' } | { type: 'error'; error: unknown }>()
@@ -32,6 +35,8 @@ const onPack = async () => {
             cover: cover.value,
             bgm: bgm.value,
             preview: preview.value,
+            chart: chart.value,
+            offset: offset.value,
             description: description.value,
         })
 
@@ -53,18 +58,23 @@ const onClose = () => {
 </script>
 
 <template>
-    <h1 class="text-center text-xl font-bold sm:text-3xl">Sonolus Level Packer</h1>
+    <h1 class="text-center text-xl font-bold sm:text-3xl">Sonolus D4DJ Level Packer</h1>
 
     <p>
-        See README.md. <br />
+        Pack your D4DJ Groovy Mix levels into Sonolus collection packages. <br />
+        For Chart Editor, use <VLink url="https://girlsband.party/d4dj/editor" /> <br />
         <br />
         Sonolus: <br />
         Version {{ version.sonolus }} <br />
         <VLink url="https://sonolus.com" /> <br />
         <br />
+        Engine: <br />
+        Version {{ engineVersion }} <br />
+        <VLink url="https://github.com/gorenganhunter/sonolus-d4dj-engine" /> <br />
+        <br />
         Packer: <br />
         Version {{ appVersion }} <br />
-        <VLink url="https://github.com/Sonolus/sonolus-level-packer" />
+        <VLink url="https://github.com/gorenganhunter/sonolus-d4dj-level-packer" />
     </p>
 
     <form @submit.prevent="onPack">
@@ -95,8 +105,8 @@ const onClose = () => {
                 label="Rating"
                 placeholder="Enter level rating..."
                 :min="0"
-                :max="100"
-                :step="1"
+                :max="20"
+                :step="0.5"
             />
 
             <VFileField v-model="cover" label="Cover" accept="image/*" />
@@ -104,6 +114,10 @@ const onClose = () => {
             <VFileField v-model="bgm" label="Bgm" />
 
             <VFileField v-model="preview" label="Preview" />
+            
+            <VFileField v-model="chart" label="Chart (bangbangboom-editor exported as D4DJ)" accept=".json" />
+
+            <VNumberField v-model="offset" label="Offset" placeholder="Enter level offset..." />
 
             <VTextAreaField
                 v-model="description"
