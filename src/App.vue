@@ -107,6 +107,7 @@ const onClose = () => {
                 :min="0"
                 :max="20"
                 :step="0.5"
+                required
             />
 
             <VFileField v-model="cover" label="Cover" accept="image/*" />
