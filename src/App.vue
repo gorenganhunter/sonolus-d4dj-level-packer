@@ -115,10 +115,20 @@ const onClose = () => {
             <VFileField v-model="bgm" label="Bgm" />
 
             <VFileField v-model="preview" label="Preview" />
-            
-            <VFileField v-model="chart" label="Chart (bangbangboom-editor exported as D4DJ)" accept=".json" required />
 
-            <VNumberField v-model="offset" label="Offset" placeholder="Enter level offset..." required />
+            <VFileField
+                v-model="chart"
+                label="Chart (bangbangboom-editor exported as D4DJ)"
+                accept=".json"
+                required
+            />
+
+            <VNumberField
+                v-model="offset"
+                label="Offset"
+                placeholder="Enter level offset..."
+                required
+            />
 
             <VTextAreaField
                 v-model="description"
