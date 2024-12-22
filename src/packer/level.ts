@@ -5,7 +5,7 @@ export const packLevelData: PackLevelData = async ({ chart, offset }) => {
     if (!chart) throw new Error('No chart file selected')
 
     const b34djChart = JSON.parse(await chart.text()) as B34DJChart
-    const levelData = b34djToLevelData(b34djChart, offset)
+    const levelData = b34djToLevelData(b34djChart, offset / 1000)
 
     return { type: 'json', data: levelData }
 }
