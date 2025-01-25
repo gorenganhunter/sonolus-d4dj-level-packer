@@ -16,7 +16,7 @@
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
     "pako": "^2.1.0",
-    "sonolus-d4dj-engine": "^1.2.7",
+    "sonolus-d4dj-engine": "^1.2.8",
     "vue": "^3.5.12"
   },
   "devDependencies": {
