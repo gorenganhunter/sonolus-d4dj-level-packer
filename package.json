@@ -11,8 +11,8 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@sonolus/core": "~7.13.3",
-    "@sonolus/free-pack": "~1.1.7",
+    "@sonolus/core": "~7.14.0",
+    "@sonolus/free-pack": "~1.2.0",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
     "pako": "^2.1.0",
