@@ -4,7 +4,9 @@ import pluginVue from 'eslint-plugin-vue'
 import tsEslint from 'typescript-eslint'
 
 export default tsEslint.config(
-    { ignores: ['**/*.*', '!src/**/*.*'] },
+    {
+        ignores: ['**/*.*', '!src/**/*.*'],
+    },
 
     eslint.configs.recommended,
 
@@ -23,7 +25,14 @@ export default tsEslint.config(
             },
         },
         rules: {
-            'vue/block-lang': ['error', { script: { lang: 'ts' } }],
+            'vue/block-lang': [
+                'error',
+                {
+                    script: {
+                        lang: 'ts',
+                    },
+                },
+            ],
             'no-undef': 'off',
             '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
             '@typescript-eslint/switch-exhaustiveness-check': 'error',
