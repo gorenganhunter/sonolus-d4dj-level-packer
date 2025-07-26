@@ -20,13 +20,13 @@ npm run dev
 
 Modify:
 
--   `src/packer/options.ts` to add options required for packing levels.
--   `src/App.vue` to add UI, and pass options to `pack()`.
--   `src/packer/assets.ts` to add assets required for packing levels.
--   `src/packer/engine.ts` to implement `packEngine`, where first argument contains options and assets.
--   `src/packer/level.ts` to implement `packLevelData`, where first argument contains options and assets.
--   `index.html` meta.
--   `public/favicon.ico` and `public/thumbnail.png`.
+- `src/packer/options.ts` to add options required for packing levels.
+- `src/App.vue` to add UI, and pass options to `pack()`.
+- `src/packer/assets.ts` to add assets required for packing levels.
+- `src/packer/engine.ts` to implement `packEngine`, where first argument contains options and assets.
+- `src/packer/level.ts` to implement `packLevelData`, where first argument contains options and assets.
+- `index.html` meta.
+- `public/favicon.ico` and `public/thumbnail.png`.
 
 ## Deployment
 
