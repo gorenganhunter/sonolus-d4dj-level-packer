@@ -62,7 +62,7 @@ const onClose = () => {
 
     <p>
         Pack your D4DJ Groovy Mix levels into Sonolus collection packages. <br />
-        For Chart Editor, use <VLink url="https://girlsband.party/d4dj/editor" /> <br />
+        For Chart Editor, use <VLink url="https://editor.d4c.my.id" /> <br />
         <br />
         Sonolus: <br />
         Version {{ version.sonolus }} <br />
