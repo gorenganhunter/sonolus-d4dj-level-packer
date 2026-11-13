@@ -126,6 +126,9 @@ const onClose = () => {
             <VNumberField
                 v-model="offset"
                 label="Offset"
+                :min="-10000"
+                :max="10000"
+                :step="0.001"
                 placeholder="Enter level offset..."
                 required
             />
